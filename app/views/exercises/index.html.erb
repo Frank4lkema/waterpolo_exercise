@@ -9,9 +9,7 @@
 	</div>
 
 	<div class="w-96 hidden" id="new-exercise-form">
-		<%= turbo_frame_tag "new_exercise" do %>
-			<%= render "form", exercise: @exercise %>
-		<% end %>
+		<%= render "form", exercise: @exercise %>
 	</div>
 
 	<div id="exercises" class="min-w-full">

@@ -3,7 +3,7 @@
 		<strong class="block font-medium mb-1">Title:</strong>
 		<%= exercise.title %>
 		<%= exercise.body %>
-		<%= image_tag(exercise.image) %>
+		<%= image_tag(exercise.image) if exercise.image.attached? %>
 	</p>
 
 	<% if action_name != "show" %>

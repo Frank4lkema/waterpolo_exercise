@@ -3,8 +3,9 @@ class Exercise < ApplicationRecord
   has_many_attached :images
   has_rich_text :body
 
+  enum type: {
+    swim: 0,
+    ball: 1
+  }
 
-  def image_as_thumbnail
-    image.variant(resize_ti_limit: [300, 300]).processed
-  end
 end

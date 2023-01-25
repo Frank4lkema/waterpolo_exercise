@@ -1,14 +1,17 @@
 <div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
+	<% if notice.present? %>
+		<p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+	<% end %>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Oefeningen</h1>
-    <%= link_to 'Oefening toevoegen', new_exercise_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
+	<div class="flex justify-between items-center">
+		<h1 class="font-bold text-4xl">Oefeningen</h1>
+	</div>
 
-  <div id="exercises" class="min-w-full">
-    <%= render @exercises %>
-  </div>
+	<div class="w-96">
+		<%= render "form", exercise: @exercise %>
+	</div>
+
+	<div id="exercises" class="min-w-full">
+		<%= render @exercises %>
+	</div>
 </div>

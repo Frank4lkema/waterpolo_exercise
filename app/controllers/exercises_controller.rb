@@ -3,6 +3,7 @@ class ExercisesController < ApplicationController
 
   # GET /exercises or /exercises.json
   def index
+    @exercise = Exercise.new
     @exercises = Exercise.all
   end
 

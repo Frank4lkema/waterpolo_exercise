@@ -1,0 +1,5 @@
+<%= turbo_stream.prepend "exercises", partial: "exercises/exercise", locals: { exercise: @exercise } %>
+
+<%= turbo_stream.replace "new_exercise" do %>
+	<%= render partial: "exercises/form", locals: { exercise: @new_exercise } %>
+<% end %>

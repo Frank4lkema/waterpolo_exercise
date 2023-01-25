@@ -9,10 +9,14 @@
 	</div>
 
 	<div class="w-96 hidden" id="new-exercise-form">
-		<%= render "form", exercise: @exercise %>
+		<%= turbo_frame_tag "new_exercise" do %>
+			<%= render "form", exercise: @exercise %>
+		<% end %>
 	</div>
 
 	<div id="exercises" class="min-w-full">
-		<%= render @exercises %>
+		<%= turbo_frame_tag "exercises" do %>
+			<%= render @exercises %>
+		<% end %>
 	</div>
 </div>

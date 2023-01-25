@@ -23,11 +23,12 @@ class ExercisesController < ApplicationController
   # POST /exercises or /exercises.json
   def create
     @exercise = Exercise.new(exercise_params)
+    @new_exercise = Exercise.new
 
     respond_to do |format|
       if @exercise.save
         format.html { redirect_to exercise_url(@exercise), notice: "Exercise was successfully created." }
-        format.json { render :show, status: :created, location: @exercise }
+        format.turbo_stream
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @exercise.errors, status: :unprocessable_entity }

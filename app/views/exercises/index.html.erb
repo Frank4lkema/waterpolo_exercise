@@ -3,12 +3,12 @@
 		<p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
 	<% end %>
 
-	<div class="flex justify-between items-center">
+	<div class="flex justify-between items-center" data-controller="exercise">
 		<h1 class="font-bold text-4xl">Oefeningen</h1>
-		<btn><%= tabler_icon("chevron-down") %></btn>
+		<btn data-action="click->exercise#toggle"><%= tabler_icon("chevron-down") %></btn>
 	</div>
 
-	<div class="w-96 hidden">
+	<div class="w-96 hidden" id="new-exercise-form">
 		<%= render "form", exercise: @exercise %>
 	</div>
 

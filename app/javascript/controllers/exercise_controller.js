@@ -5,6 +5,6 @@ export default class extends Controller {
 
   toggle() {
     // this.element.classList.toggle("hidden")
-    console.log("toggle")
+    document.getElementById("new-exercise-form").classList.toggle("hidden")
   }
 }

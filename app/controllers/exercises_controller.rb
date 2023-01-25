@@ -4,7 +4,7 @@ class ExercisesController < ApplicationController
   # GET /exercises or /exercises.json
   def index
     @exercise = Exercise.new
-    @exercises = Exercise.all
+    @exercises = Exercise.all.order(created_at: :desc)
   end
 
   # GET /exercises/1 or /exercises/1.json
@@ -56,6 +56,7 @@ class ExercisesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to exercises_url, notice: "Exercise was successfully destroyed." }
       format.json { head :no_content }
+      format.turbo_stream
     end
   end
 

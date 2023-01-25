@@ -7,8 +7,10 @@
 	</p>
 
 	<% if action_name != "show" %>
-		<%= link_to "Toon oefening", exercise, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-		<%= link_to 'Bewerk oefening', edit_exercise_path(exercise), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+		<div class="flex justify-between content-center mt-3">
+			<%= link_to 'Bewerk oefening', edit_exercise_path(exercise), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+			<%= button_to 'Verwijder oefening', exercise_path(exercise), method: :delete, class: "rounded-lg py-3 ml-2 px-5 bg-red-100 inline-block font-medium" %>
+		</div>
 		<hr class="mt-6">
 	<% end %>
 </div>

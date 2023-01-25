@@ -18,6 +18,16 @@
 		</div>
 
 		<div class="my-5">
+			<%= form.label "Doel" %>
+			<%= form.text_field :purpose, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+		</div>
+
+		<div class="my-5">
+			<%= form.label "Duur oefening in minuten" %>
+			<%= form.number_field :minutes,in: 1.0..20.0, step: 1.0, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+		</div>
+
+		<div class="my-5">
 			<%= form.rich_text_area :body %>
 		</div>
 

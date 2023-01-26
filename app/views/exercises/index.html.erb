@@ -5,10 +5,10 @@
 
 	<div class="flex justify-between items-center" data-controller="exercise">
 		<h1 class="font-bold text-4xl">Oefeningen</h1>
-		<btn data-action="click->exercise#toggle"><%= tabler_icon("chevron-down") %></btn>
+		<btn data-action="click->exercise#toggle"> + </btn>
 	</div>
 
-	<div class="w-96 hidden" id="new-exercise-form">
+	<div class="max-w-sm hidden" id="new-exercise-form">
 		<%= render "form", exercise: @exercise %>
 	</div>
 

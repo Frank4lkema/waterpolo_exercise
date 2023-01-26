@@ -1,9 +1,20 @@
 <div id="<%= dom_id exercise %>">
 	<p class="my-5">
-		<strong class="block font-medium mb-1">Title:</strong>
-		<%= exercise.title %>
+		<strong class="block font-medium mb-1"><%= exercise.title %></strong>
+	</p>
+	<p class="my-5">
+		Doel:
+		<%= exercise.purpose %>
+	</p>
+	<p class="my-5">
+		Duur: <%= exercise.minutes %>
+	</p>
+	<p class="my-5">
 		<%= exercise.body %>
-		<%= image_tag(exercise.image) if exercise.image.attached? %>
+	</p>
+
+	<p class="my-5">
+		<%= image_tag(exercise.image, {width: 300, height: 300}) if exercise.image.attached? %>
 	</p>
 
 	<% if action_name != "show" %>

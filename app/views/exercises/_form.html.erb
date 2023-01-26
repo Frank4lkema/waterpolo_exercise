@@ -14,26 +14,26 @@
 
 		<div class="my-5">
 			<%= form.label :title %>
-			<%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+			<%= form.text_field :title, class: "block shadow rounded-lg  border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
 		</div>
 
 		<div class="my-5">
 			<%= form.label "Doel" %>
-			<%= form.text_field :purpose, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+			<%= form.text_field :purpose, class: "block shadow rounded-lg border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
 		</div>
 
 		<div class="my-5">
 			<%= form.label "Duur oefening in minuten" %>
-			<%= form.number_field :minutes,in: 1.0..20.0, step: 1.0, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+			<%= form.number_field :minutes,in: 1.0..20.0, step: 1.0, class: "block shadow rounded-lg border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
 		</div>
 
 		<div class="my-5">
-			<%= form.rich_text_area :body %>
+			<%= form.rich_text_area :body , class: "border border-gray-400 p-2 rounded-lg w-full h-32" %>
 		</div>
 
 		<div class="my--5">
 			<%= form.label :image %>
-			<%= form.file_field :image %>
+			<%= form.file_field :image, class: "p-2 rounded-lg" %>
 		</div>
 
 		<div class="flex justify-between mt-6">

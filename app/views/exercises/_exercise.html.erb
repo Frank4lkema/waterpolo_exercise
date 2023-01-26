@@ -1,27 +1,29 @@
-<div id="<%= dom_id exercise %>">
-	<p class="my-5">
-		<strong class="block font-medium mb-1"><%= exercise.title %></strong>
-	</p>
-	<p class="my-5">
-		Doel:
-		<%= exercise.purpose %>
-	</p>
-	<p class="my-5">
-		Duur: <%= exercise.minutes %>
-	</p>
-	<p class="my-5">
-		<%= exercise.body %>
-	</p>
+<%= turbo_frame_tag exercise do %>
+	<div id="<%= dom_id exercise %>">
+		<p class="my-5">
+			<strong class="block font-medium mb-1"><%= exercise.title %></strong>
+		</p>
+		<p class="my-5">
+			Doel:
+			<%= exercise.purpose %>
+		</p>
+		<p class="my-5">
+			Duur: <%= exercise.minutes %>
+		</p>
+		<p class="my-5">
+			<%= exercise.body %>
+		</p>
 
-	<p class="my-5">
-		<%= image_tag(exercise.image, {width: 300, height: 300}) if exercise.image.attached? %>
-	</p>
+		<p class="my-5">
+			<%= image_tag(exercise.image, { width: 300, height: 300 }) if exercise.image.attached? %>
+		</p>
 
-	<% if action_name != "show" %>
-		<div class="flex justify-between content-center mt-3">
-			<%= link_to 'Bewerk oefening', edit_exercise_path(exercise), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-			<%= button_to 'Verwijder oefening', exercise_path(exercise), method: :delete, class: "rounded-lg py-3 ml-2 px-5 bg-red-100 inline-block font-medium" %>
-		</div>
-		<hr class="mt-6">
-	<% end %>
-</div>
+		<% if action_name != "show" %>
+			<div class="flex justify-between content-center mt-3">
+				<%= link_to 'Bewerk oefening', edit_exercise_path(exercise), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+				<%= button_to 'Verwijder oefening', exercise_path(exercise), method: :delete, class: "rounded-lg py-3 ml-2 px-5 bg-red-100 inline-block font-medium" %>
+			</div>
+			<hr class="mt-6">
+		<% end %>
+	</div>
+<% end %>

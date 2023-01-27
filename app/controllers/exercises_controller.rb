@@ -32,6 +32,7 @@ class ExercisesController < ApplicationController
     respond_to do |format|
       if @exercise.update(exercise_params)
         format.html { redirect_to exercise_url(@exercise), notice: "Exercise was successfully updated." }
+        format.turbo_stream
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
